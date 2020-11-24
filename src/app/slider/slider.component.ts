@@ -33,19 +33,16 @@ export class SliderComponent implements OnInit {
   f(a:any){
     var img = new Image();
     img.src = this.lista[this.ch];
-    if(a){
       var H = img.height;
       var W = img.width;
       var R = H/W;
       if(Math.max(H,W) == H){
         this.A = document.getElementsByClassName('w')[0].clientHeight;
-        this.L = this.A/R;
-      } else {
+        this.L = document.getElementsByClassName('w')[0].clientHeight/R;
+      } else if (Math.max(H,W) == W){
         this.L = document.getElementsByClassName('w')[0].clientWidth;
-        this.A = this.L*R;
-      }
-    }
-    
+        this.A = document.getElementsByClassName('w')[0].clientWidth*R;
+      }    
   }
 
   ev(a:string){
