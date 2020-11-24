@@ -1,0 +1,42 @@
+<div class="container"> 
+    <div class="w">
+        <img 
+        src="{{lista[ch]}}" 
+        class="backimg" 
+        (load)="f($event)"
+        height="{{A}}" 
+        width="{{L}}">
+    </div>   
+    <div class="side" (click)="ev(lista[ch])">
+        <button 
+        mat-icon-button
+        class="arrb"
+        (click)="meno()">
+            <mat-icon inline="true">chevron_left</mat-icon>
+        </button>
+    </div>
+    <div class="center" (click)="ev(lista[ch])">
+        <div class="centertop">
+        </div>
+        <div class="centerbottom">
+            <div class="bottoni">
+                <button 
+                mat-icon-button style="font-size: 20px;" 
+                *ngFor="let l of lista; let i= index"
+                class="botb">
+                    <mat-icon inline="true" *ngIf="i!=ch" (click)="sc($event)" name="{{i}}">radio_button_unchecked</mat-icon>
+                    <mat-icon inline="true" *ngIf="i==ch" (click)="sc($event)" name="{{i}}">radio_button_checked</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="side">
+        <button 
+        mat-icon-button 
+        class="arrb" 
+        (click)="piu()">
+            <mat-icon inline="true">chevron_right</mat-icon>
+        </button>
+    </div>
+
+</div>
