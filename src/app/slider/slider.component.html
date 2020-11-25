@@ -1,18 +1,22 @@
 <div class="container"> 
-    <div class="w">
-        <img 
+    <div class="w" [ngStyle]="{'background-image': 'url(' + lista[ch] + ')', 'background-repeat':'no-repeat', 'background-position':'center', 'background-size': size , 'background-color':color }">
+        <!--<img 
         src="{{lista[ch]}}" 
         class="backimg" 
         (load)="f($event)"
         height="{{A}}" 
-        width="{{L}}">
+        width="{{L}}">-->
     </div>   
     <div class="side" (click)="ev(lista[ch])">
         <button 
         mat-icon-button
         class="arrb"
         (click)="meno()">
-            <mat-icon inline="true">chevron_left</mat-icon>
+            <mat-icon 
+            inline="true" 
+            class="icon">
+                chevron_left
+            </mat-icon>
         </button>
     </div>
     <div class="center" (click)="ev(lista[ch])">
@@ -21,7 +25,7 @@
         <div class="centerbottom">
             <div class="bottoni">
                 <button 
-                mat-icon-button style="font-size: 20px;" 
+                mat-icon-button 
                 *ngFor="let l of lista; let i= index"
                 class="botb">
                     <mat-icon inline="true" *ngIf="i!=ch" (click)="sc($event)" name="{{i}}">radio_button_unchecked</mat-icon>
@@ -35,7 +39,11 @@
         mat-icon-button 
         class="arrb" 
         (click)="piu()">
-            <mat-icon inline="true">chevron_right</mat-icon>
+        <mat-icon 
+        inline="true" 
+        class="icon">
+            chevron_right
+        </mat-icon>
         </button>
     </div>
 

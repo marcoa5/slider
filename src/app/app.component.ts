@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'slider';
+  cover='cover';
+  contain='contain';
+  transparent='transparent';
+  lightgrey='lightgrey';
+  white='white';
+  grey='grey';
+  
   lista=[
     'https://picsum.photos/id/1074/324/467',
     'https://picsum.photos/id/1021/700/200',
@@ -16,7 +23,7 @@ export class AppComponent {
     'https://picsum.photos/id/1025/500/500'
   ];
 
-  vai(a:Event){
+  vai(a:any){
     console.log(a)
   }
 }

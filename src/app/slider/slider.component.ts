@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-slider',
+  selector: 'ma-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
@@ -9,6 +9,8 @@ export class SliderComponent implements OnInit {
   L:any;
   A:any;
   @Input() lista:any;
+  @Input() size:any;
+  @Input() color:any;
   @Output() evento = new EventEmitter<string>();
   ch=0;
   constructor() { }
