@@ -11,7 +11,8 @@ export class SliderComponent implements OnInit {
   @Input() lista:any;
   @Input() size:any;
   @Input() color:any;
-  @Output() evento = new EventEmitter<string>();
+  @Output() indice = new EventEmitter<string>();
+  @Output() elemento = new EventEmitter<string>();
   ch=0;
   constructor() { }
 
@@ -32,23 +33,9 @@ export class SliderComponent implements OnInit {
     this.ch=a.target.name;
   }
 
-  f(a:any){
-    var img = new Image();
-    img.src = this.lista[this.ch];
-      var H = img.height;
-      var W = img.width;
-      var R = H/W;
-      if(Math.max(H,W) == H){
-        this.A = document.getElementsByClassName('w')[0].clientHeight;
-        this.L = document.getElementsByClassName('w')[0].clientHeight/R;
-      } else if (Math.max(H,W) == W){
-        this.L = document.getElementsByClassName('w')[0].clientWidth;
-        this.A = document.getElementsByClassName('w')[0].clientWidth*R;
-      }    
-  }
-
-  ev(a:string){
-    this.evento.emit(a)
+  ev(a:number){
+    this.indice.emit(a.toString());
+    this.elemento.emit(this.lista[a])
   }
 
 }
